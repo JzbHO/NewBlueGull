@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SQL">  <!-- 确保唯一命名空间 -->
+
+<!-- 包名及ID名 -->   <!--不加/就是相对路径  -->
+  <resultMap type="domain.Person" id="PersonResult">
+    <id column="ID" jdbcType="INTEGER" property="id"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="password" jdbcType="VARCHAR" property="password"/>
+    <result column="career" jdbcType="VARCHAR" property="career"/>
+  </resultMap>
+
+  <select id="findall"  resultMap="PersonResult">
+    	select ID,name,password,career from person where 1=1
+  </select>
+  
+     <insert id="insertOne" parameterType="domain.Person" useGeneratedKeys="true" keyProperty="id" >
+   
+     INSERT INTO person
+    (
+    name,
+    password,
+    career
+    )
+    VALUES
+    ( 
+    #{name},
+    #{password},
+    #{career}
+    )
+ 
+   </insert>
+  
+  
+  
+  
+
+
+</mapper>
