@@ -32,7 +32,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <input type="password" name="password">
 <br><br>
 职业:<br>
-<input type="text" name="career"> 
+<select name="job">
+  <option value ="Web前端开发工程师">Web前端开发工程师</option>
+  <option value ="Java开发工程师">Java开发工程师</option>
+</select> 
 <br>
 <input type="submit" value="注册"> 
 </form>

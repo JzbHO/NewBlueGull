@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    输入姓名有重复 <br>
+    账号密码有错误<br>
   </body>
 </html>

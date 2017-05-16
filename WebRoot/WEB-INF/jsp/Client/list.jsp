@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'list.jsp' starting page</title>
+    <title>登录成功</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,18 +23,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    
-<form action="servlet/login"  method="post">
-用户名:<br>
-<input type="text" name="name"> 
-<br>
-密码:<br>
-<input type="password" name="password">
-<br><br>
-职业:<br>
-<input type="text" name="career"> 
-<br>
-<input type="submit" value="登录"> <a href="http://www.w3school.com.cn"><input type="button" value="注册"></a>
-</form>
+  <form  action="servlet/RegisterServlet"  method="post">
+  请选择考试时间:
+    <select name="job">
+  <option value ="60">1个小时</option>
+  <option value ="90">1个半小时</option>
+  <option value ="120">2个小时</option>
+</select> 
+ <br>      
+<!--  <input type="button" value="开始考试" onclick="location.href='localhost:8080/NewBlueGull/WEB-INF/jsp/exam.jsp'">-->
+<input type="submit" value="开始考试">
+ </form> 
+  
   </body>
 </html>

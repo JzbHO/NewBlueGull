@@ -13,19 +13,31 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import dao.MessageDao;
 
 public class DBAccess {
+	private static SqlSession instance=null;
 	
-	
-	
-	
-	public SqlSession getSqlSession() throws IOException {
-		// 通过配置文件获取数据库连接信息
-		Reader reader = Resources.getResourceAsReader("config/MybatisConfig.xml");
-		// 通过配置信息构建一个SqlSessionFactory
-		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-		// 通过sqlSessionFactory打开一个数据库会话
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		return sqlSession;
+	public static SqlSession getSqlSession() throws IOException{
+		if(instance==null)
+		{
+			Reader reader = Resources.getResourceAsReader("config/MybatisConfig.xml");
+			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+			instance= sqlSessionFactory.openSession();
+			return instance;
+		}
+		else
+			return instance;
+		
 	}
+
+	
+//	public SqlSession getSqlSession() throws IOException {
+//		// 通过配置文件获取数据库连接信息
+//		Reader reader = Resources.getResourceAsReader("config/MybatisConfig.xml");
+//		// 通过配置信息构建一个SqlSessionFactory
+//		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+//		// 通过sqlSessionFactory打开一个数据库会话
+//		SqlSession sqlSession = sqlSessionFactory.openSession();
+//		return sqlSession;
+//	}
 	public static void main(String []args) throws IOException{
 		Reader reader = Resources.getResourceAsReader("config/MybatisConfig.xml");
 		// 通过配置信息构建一个SqlSessionFactory
@@ -40,27 +52,7 @@ public class DBAccess {
 //		
 //	}
 //	
-//	public static SqlSession getSqlSession() throws IOException{
-//				//单例模式
-//				//异常抛给DAO层
-//				//这是路径用/，并且以src为当前根目录,三步				  main/java/config/MybatisConfig.xml
-//				//Reader reader =Resources.getResourceAsReader("/MybatisConfig.xml");
-////		if(instance==null){
-////			ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-////			InputStream reader = classloader.getResourceAsStream("MybatisConfig.xml");
-////			//Reader reader =Resources.getResourceAsReader("config/MybatisConfig.xml");
-////	        if(reader==null){
-////	        	System.out.print("ok");
-////	        }
-////	        
-////			SqlSessionFactory sqlSessionFactory=new SqlSessionFactoryBuilder().build(reader);
-////			SqlSession sqlSession=sqlSessionFactory.openSession();
-////			instance=sqlSessionFactory.openSession();
-////		}
-////		return instance;
-//		
-//	}
-	
+
 	
 	
 //	public static SqlSession getSqlSession() throws IOException{

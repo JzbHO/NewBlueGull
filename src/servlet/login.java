@@ -15,9 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+
 import service.QueryService;
 import dao.MessageDao;
 import db.DBAccess;
+import domain.Manager;
 import domain.Person;
 
 public class login extends HttpServlet {
@@ -29,24 +31,54 @@ public class login extends HttpServlet {
 		// 设置编码
 		req.setCharacterEncoding("UTF-8");
 		// 接受页面的值
-		if(req.getParameter("name")!=null){
-		String name = req.getParameter("name");
-		MessageDao md=new MessageDao(); 
-		List<Person> all=md.queryList1();
-		
-		for(int i=0;i<all.size();i++){
-			if(!all.get(i).getName().equals(name))
+		if(req.getParameter("category").equals("管理员"))
+		{
+			System.out.print(req.getParameter("category"));
+			if(req.getParameter("name")!=null){
+				String name = req.getParameter("name");
+				String password = req.getParameter("password");
+				MessageDao md=new MessageDao(); 
+				List<Manager> all=md.queryListManager();
+				
+				for(int i=0;i<all.size();i++){
+					if(all.get(i).getName().equals(name)&&all.get(i).getPassword().equals(password))
+					{
+						req.getRequestDispatcher("/WEB-INF/jsp/Manager/manager.jsp").forward(req, resp);
+						break;
+					}
+					else{
+						req.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(req, resp);
+						break;
+					}
+					}
+				}else
+					req.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(req, resp);
+			
+		}
+		else{
+			if(req.getParameter("name")!=null){
+			String name = req.getParameter("name");
+			String password = req.getParameter("password");
+			MessageDao md=new MessageDao(); 
+			List<Person> all=md.queryList1();
+			
+			for(int i=0;i<all.size();i++){
+				if(all.get(i).getName().equals(name)&&all.get(i).getPassword().equals(password))
+				{
+					req.getRequestDispatcher("/WEB-INF/jsp/Client/list.jsp").forward(req, resp);
+					break;
+				}
+				else{
+					req.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(req, resp);
+					break;
+				}
+				}
+			
+			}else
 				req.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(req, resp);
-			}
-		}else
+
+		}
 		
-		req.getRequestDispatcher("/WEB-INF/jsp/list.jsp").forward(req, resp);
-		//req.setAttribute("command", command);
-				//req.setAttribute("description", description);
-				//QueryService listService = new QueryService();
-				// 查询消息列表并传给页面
-				//listService.queryMessageList();
-				// 向页面跳转
 	}
 
 	@Override

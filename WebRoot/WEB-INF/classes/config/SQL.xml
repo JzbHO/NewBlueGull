@@ -13,8 +13,18 @@
     <result column="career" jdbcType="VARCHAR" property="career"/>
   </resultMap>
 
+  <resultMap type="domain.Manager" id="ManagerResult">
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="password" jdbcType="VARCHAR" property="password"/>
+  </resultMap>
+
+
   <select id="findall"  resultMap="PersonResult">
     	select ID,name,password,career from person where 1=1
+  </select>
+  
+   <select id="findManager"  resultMap="ManagerResult">
+    	select name,password from manager where 1=1
   </select>
   
      <insert id="insertOne" parameterType="domain.Person" useGeneratedKeys="true" keyProperty="id" >

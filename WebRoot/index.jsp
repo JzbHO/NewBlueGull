@@ -19,27 +19,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
-  <script type="text/javascript">
-    var mystr="我是";
-    var mychar="JavaScript";
-    document.write("mystr+mychar");
-    
-    function rec(){                                         
-    window.open('http://www.imooc.com','width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes')
-    }
-  </script>
+ 
   <body>
+  
+  
     <form action="servlet/login"  method="post">
-用户名:<br>
-<input type="text" name="name"> 
-<br>
-密码:<br>
-<input type="password" name="password">
-<br><br>
-职业:<br>
-<input type="text" name="career"> 
-<br>
-<input type="submit" value="登录"> <input type="button" value="注册" onClick="rec()">
+		用户名:<br>
+		<input type="text" name="name"> 
+		<br>
+		密码:<br>
+		<input type="password" name="password">
+		<br>
+		<input type="radio" name="category" value="用户">用户
+		<input type="radio" name="category" value="管理员">管理员
+		<br>
+		<input type="submit" value="登录"> <input type="button" value="注册" >
 </form>
   </body>
 </html>
