@@ -43,6 +43,8 @@ public class login extends HttpServlet {
 				for(int i=0;i<all.size();i++){
 					if(all.get(i).getName().equals(name)&&all.get(i).getPassword().equals(password))
 					{
+						//Ê¹ÓÃsessionÀ´´æ´¢model
+						req.getSession().setAttribute("manager",all.get(i));
 						req.getRequestDispatcher("/WEB-INF/jsp/Manager/manager.jsp").forward(req, resp);
 						break;
 					}
@@ -65,6 +67,8 @@ public class login extends HttpServlet {
 			for(int i=0;i<all.size();i++){
 				if(all.get(i).getName().equals(name)&&all.get(i).getPassword().equals(password))
 				{
+					req.getSession().setAttribute("person",all.get(i));
+			
 					req.getRequestDispatcher("/WEB-INF/jsp/Client/list.jsp").forward(req, resp);
 					break;
 				}

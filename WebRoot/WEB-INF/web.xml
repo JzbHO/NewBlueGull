@@ -17,9 +17,15 @@
   
   <servlet>
 
-    <servlet-name>itemservlet</servlet-name>
-    <servlet-class>servlet.itemservlet</servlet-class>
+    <servlet-name>listservlet</servlet-name>
+    <servlet-class>servlet.listServlet</servlet-class>
   </servlet>
+  <servlet>
+   
+    <servlet-name>CenterServlet</servlet-name>
+    <servlet-class>servlet.CenterServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -32,8 +38,12 @@
     <url-pattern>/servlet/RegisterServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>itemservlet</servlet-name>
-    <url-pattern>/servlet/itemservlet</url-pattern>
+    <servlet-name>listservlet</servlet-name>
+    <url-pattern>/servlet/listServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CenterServlet</servlet-name>
+    <url-pattern>/servlet/CenterServlet</url-pattern>
   </servlet-mapping>
   
   

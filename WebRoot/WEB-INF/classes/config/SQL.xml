@@ -6,23 +6,24 @@
 <mapper namespace="SQL">  <!-- 确保唯一命名空间 -->
 
 <!-- 包名及ID名 -->   <!--不加/就是相对路径  -->
+<!-- 
   <resultMap type="domain.Person" id="PersonResult">
     <id column="ID" jdbcType="INTEGER" property="id"/>
     <result column="name" jdbcType="VARCHAR" property="name"/>
     <result column="password" jdbcType="VARCHAR" property="password"/>
     <result column="career" jdbcType="VARCHAR" property="career"/>
   </resultMap>
-
+ -->
   <resultMap type="domain.Manager" id="ManagerResult">
     <result column="name" jdbcType="VARCHAR" property="name"/>
     <result column="password" jdbcType="VARCHAR" property="password"/>
   </resultMap>
 
-
+<!--
   <select id="findall"  resultMap="PersonResult">
     	select ID,name,password,career from person where 1=1
   </select>
-  
+  -->
    <select id="findManager"  resultMap="ManagerResult">
     	select name,password from manager where 1=1
   </select>
@@ -32,21 +33,88 @@
      INSERT INTO person
     (
     name,
-    password,
+    password,              <!-- 库中的值 -->
     career
     )
     VALUES
     ( 
     #{name},
-    #{password},
+    #{password},  
     #{career}
     )
  
    </insert>
+  <!-- 
+  <insert id="insertSelectItem" parameterType="domain.SelectItem" useGeneratedKeys="true" keyProperty="id" >
+   
+     INSERT INTO selectitem
+    (
+    type,
+    answer,
+    score,
+    career,
+    analyze,
+    item,
+    options
+    )
+    VALUES
+    ( 
+    #{type},
+    #{answer},
+    #{score},
+    #{career},
+    #{analyze},
+    #{item},
+    #{options}
+    )
+ 
+   </insert>
   
+   <insert id="insertJudgeItem" parameterType="domain.JudegeItem" useGeneratedKeys="true" keyProperty="id" >
+   
+     INSERT INTO judgeitem
+    (
+    type,
+    answer,
+    score,
+    career,
+    analyze,
+    item
+    )
+    VALUES
+    ( 
+    #{type},
+    #{answer},
+    #{score},
+    #{career},
+    #{analyze},
+    #{item}
+    )
+ 
+   </insert>
+    <insert id="insertShortItem" parameterType="domain.ShortAnswerQuestion" useGeneratedKeys="true" keyProperty="id" >
+   
+     INSERT INTO shortanswerquestion
+    (
+    type,
+    answer,
+    score,
+    career,
+    analyze,
+    item
+    )
+    VALUES
+    ( 
+    #{type},
+    #{answer},
+    #{score},
+    #{career},
+    #{analyze},
+    #{item}
+    )
+ 
+   </insert>
   
-  
-  
-
+-->
 
 </mapper>

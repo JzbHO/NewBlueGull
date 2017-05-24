@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="domain.Person" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'center.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,25 +20,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-  </head>
-  
-  
- 
-  <body>
-  
-  
-    <form action="servlet/login"  method="post">
-		用户名:<br>
-		<input type="text" name="name"> 
-		<br>
-		密码:<br>
-		<input type="password" name="password">
-		<br>
-		<input type="radio" name="category" value="用户">用户
-		<input type="radio" name="category" value="管理员">管理员
-		<br>
-		<input type="submit" value="登录"> <input type="button" value="注册" >
-</form>
-  </body>
 
+  </head>
+  <p1>个人中心</p1><br>
+  <body>
+  		<%Person p=(Person)session.getAttribute("person"); %>	
+  
+  	用户名:<% 
+  			
+  			out.print(p.getName());
+  	
+  		%>
+  	职业:<% 
+  		
+  			out.print(p.getCareer());
+  		%>	
+    <br>
+  </body>
 </html>

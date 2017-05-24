@@ -9,6 +9,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   
   <body>
+    <input  type="button" value="导入考试题目">
+    
+    
+    
     
   录入题目
 <form action="servlet/itemservlet"  method="get">

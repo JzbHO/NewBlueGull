@@ -9,7 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title></title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,25 +19,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<%
+			int time=60*Integer.parseInt(request.getParameter("time"));
+	
+	 %>
+	<script type="text/javascript">
+		 var i;
+	 var time;	
+	 function starttime(){
+		 time=document.getElementById("counttime").getAttribute("value");
+		 time=time-1;
+		 document.getElementById("counttime").setAttribute("value",time);
+		 i=setTimeout("starttime()",1000);
+	 }
+	 function stoptime(){ 
+     	clearTimeout(i);
+	 }
+	
+	
+	
+	
+	
+	</script>
+	
+	
+
   </head>
   
-  
- 
   <body>
-  
-  
-    <form action="servlet/login"  method="post">
-		用户名:<br>
-		<input type="text" name="name"> 
-		<br>
-		密码:<br>
-		<input type="password" name="password">
-		<br>
-		<input type="radio" name="category" value="用户">用户
-		<input type="radio" name="category" value="管理员">管理员
-		<br>
-		<input type="submit" value="登录"> <input type="button" value="注册" >
-</form>
+    考试时间 <input type="text" id="counttime" readonly="readonly" value="<%=time%>"><br>
+    开始<input type="button" value="开始" onclick="starttime()"><br>
+    暂停<input type="button" value="暂停" onclick="stoptime()">  
   </body>
-
 </html>

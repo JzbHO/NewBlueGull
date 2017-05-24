@@ -19,5 +19,32 @@
 			<attribute name="owner.project.facets" value="jst.web.jstl"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-aop-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-aspects-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-beans-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-context-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-context-support-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-core-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-expression-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-framework-bom-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar1/spring-instrument-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-instrument-tomcat-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-jdbc-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-jms-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-messaging-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-orm-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-oxm-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-test-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-tx-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-web-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-webmvc-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-webmvc-portlet-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Spring/spring jar 2/spring-websocket-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Mybitis/commons-logging-1.2-bin/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Mybitis/commons-logging-1.2-bin/commons-logging-1.2/commons-logging-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/commons-dbcp2-2.1.1-bin/commons-dbcp2-2.1.1/commons-dbcp2-2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/commons-dbcp2-2.1.1-bin/commons-dbcp2-2.1.1/commons-dbcp2-2.1.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/commons-pool2-2.4.2-bin/commons-pool2-2.4.2/commons-pool2-2.4.2.jar"/>
+	<classpathentry kind="lib" path="E:/Jar 包/Mybitis/mybatis-spring-1.2.3/mybatis-spring-1.2.3/mybatis-spring-1.2.3.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

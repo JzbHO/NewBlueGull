@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="domain.Person"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -6,34 +7,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>登录成功</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
-  </head>
-  
+ <% Person p=(Person)session.getAttribute("person");
+		String career=p.getCareer();
+	%> 
+
+<title>登录成功</title>
+     <base href="<%=basePath%>">
+
+
+	 
+    
+     		
+		  <script type="text/javascript" 	 >
+   				 function rec(){
+   				
+    var mymessage=confirm("参加考试,考试内容可在个人中心修改");
+    if(mymessage==true)
+    {
+    	return true;
+    }
+    else
+    {
+       return false;
+    }
+  }  
+  </script>  
+	
+
+
+</head>
+
+
+	
+ 
   <body>
-  <form  action="servlet/RegisterServlet"  method="post">
-  请选择考试时间:
-    <select name="job">
-  <option value ="60">1个小时</option>
-  <option value ="90">1个半小时</option>
-  <option value ="120">2个小时</option>
-</select> 
- <br>      
-<!--  <input type="button" value="开始考试" onclick="location.href='localhost:8080/NewBlueGull/WEB-INF/jsp/exam.jsp'">-->
-<input type="submit" value="开始考试">
- </form> 
+  <form action="servlet/CenterServlet"  method="post">
+  		<input type="submit" value="个人中心">
+  </form>
   
+
+  <form  action="servlet/listServlet"  onsubmit="return rec()" method="post">
+  请选择考试时间:
+ <label><input name="time" type="radio" value="60" />1个小时 </label> 
+<label><input name="time" type="radio" value="90" />1个半小时</label> 
+<label><input name="time" type="radio" value="120" />2个小时</label> 
+
+ <br>      
+
+  <input type="submit" value="开始考试" >
+   
+ </form> 
+	
   </body>
+  
+
 </html>
